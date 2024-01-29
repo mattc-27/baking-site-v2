@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
-
 export function WelcomeSection() {
 
     return (
@@ -9,12 +8,13 @@ export function WelcomeSection() {
         <ParallaxBanner
             className='welcome-banner'
         >
-            <Parallax className='welcome-content'
+            <Parallax
                 translateY={[
-                    '-50%',
-                    '50%'
+                    '0%',
+                    '0%'
                 ]}
                 opacity={['2', '0']}
+                className='welcome-content'
             >
                 <h3>
                     Welcome to GetBakedWith.Me!
@@ -24,6 +24,5 @@ export function WelcomeSection() {
                 </p>
             </Parallax>
         </ParallaxBanner>
-
     );
 }

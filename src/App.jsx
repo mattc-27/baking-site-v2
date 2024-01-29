@@ -4,7 +4,7 @@ import {
     RouterProvider
 } from 'react-router-dom';
 
-//import ReactGA from 'react-ga4';
+import ReactGA from 'react-ga4';
 
 import { ParallaxProvider } from "react-scroll-parallax";
 
@@ -13,31 +13,33 @@ import './style.css';
 import { Layout } from './components/Layout';
 import { Home } from './Home';
 import { RecipePage } from './components/RecipePage';
+import { RecipeView } from './components/RecipeView';
+import Recipes from './Recipes';
 
-{/* 
+
 ReactGA.initialize([
     {
         trackingId: ''
     }
-]);*/}
-
+]);
 
 const router = createBrowserRouter([
 
     {
         path: '/',
         element: <Layout />,
+
         children: [
+            { index: true, element: <Home /> },
             {
-                children: [
-                    { index: true, element: <Home /> },
-                    {
-                        path: '/recipe/:id',
-                        element: <RecipePage />,
-                    },
-                ]
+                path: `/recipes`,
+                element: <Recipes />,
+            },
+            {
+                path: `/recipes/:id`,
+                element: <RecipeView />,
             }
-        ]
+        ],
     }
 ])
 
@@ -48,4 +50,5 @@ export default function App() {
             <RouterProvider router={router} />
         </ParallaxProvider>
     );
+    
 }
