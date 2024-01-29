@@ -1,40 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
-import { Element, scroller } from 'react-scroll'; // Import react-scroll
-import { WelcomeSection } from './components/WelcomeSection';
-import { RecipeCard } from './components/RecipeCard';
+import { useLocation } from 'react-router-dom';
 import { recipeCategories, recipeCollectionNew } from './data/recipes';
 import { RecipeCategory } from './components/RecipeCategory';
-import { RecipesAll } from './data/recipeCollection';
 
-export function Recipes() {
+export default function Recipes() {
 
   const location = useLocation();
 
   const [recipes, setRecipes] = useState('');
   const [recipesNew, setRecipesNew] = useState('');
-  const [showToTopButton, setShowToTopButton] = useState(false);
   const [categoryRecipes, setCategoryRecipes] = useState('');
-  const [recipeLinks, setRecipeLinks] = useState('');
 
-  const [allRecipes, setAllRecipes] = useState('')
 
   useEffect(() => {
-
     setRecipesNew(recipeCollectionNew);
-
   }, [])
-
-  console.log(recipesNew)
-
-  const scrollToRecipe = (recipeId) => {
-    scroller.scrollTo(recipeId, {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart',
-    });
-  };
 
   useEffect(() => {
     setRecipes(recipeCategories)
@@ -48,24 +28,6 @@ export function Recipes() {
   useEffect(() => {
     console.log(recipesNew)
   }, [recipes, setRecipes])
-
-  const handleScroll = () => {
-    // Adjust the offset value based on your design
-    const offset = 200;
-
-    // Check if the user has scrolled beyond the offset
-    setShowToTopButton(window.scrollY > offset);
-  };
-
-  useEffect(() => {
-    // Add a scroll event listener
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
 
 

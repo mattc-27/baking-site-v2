@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import ReactGA from 'react-ga4';
+
 import { InstagramLogo } from './InstagramLogo';
-import GithubLogo from '../assets/GithubLogo.png';
 import Logo1 from '../../logo1.png';
+import GithubLogo from '../assets/GithubLogo.png';
 
 export function Layout() {
- 
+
     const location = useLocation();
+
+
+
+
 
     const [isSolidBackground, setIsSolidBackground] = useState(false);
 
@@ -28,16 +32,6 @@ export function Layout() {
         };
     }, []);
 
-    const styles = {
-        headerLink: {
-            width: 'auto'
-        }
-    }
-
-
-    useEffect(() => {
-        ReactGA.send(location.pathname + location.search);
-    }, [location]);
 
     return (
 
@@ -45,20 +39,21 @@ export function Layout() {
             <header className={isSolidBackground ? 'solid-background' : 'transparent-background'}
             >
                 <div className='header-content'>
-                    <div className='header-title'>
+                    <div className='header-title header-img'>
                         <Link to={'/'}
+                        
                         >
                             {/*  <h1>GetBakedWithMe</h1>*/}
                             <img
-                                src={Logo1} style={{ maxHeight: '100%', width: 'auto' }} />
+                                className='headerLogoImg'
+                                src={Logo1} /* style={{ maxHeight: '100%', width: 'auto' }} */ />
                         </Link>
                     </div>
-                    {/* 
                     <div className='header-nav'>
                         <Link
-                            style={styles.headerLink} className={isSolidBackground ? 'light-text' : 'dark-text'} to={`/recipes`}>Recipes</Link>
+                            className={isSolidBackground ? 'light-text' : 'dark-text'} to={`/recipes`}>Recipes</Link>
+
                     </div>
-                    */}
                 </div>
             </header>
             {/** **/}

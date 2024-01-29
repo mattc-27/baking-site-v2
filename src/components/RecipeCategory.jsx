@@ -31,7 +31,7 @@ export function RecipeCategory({ item, category, recipes }) {
 
     return (
         <>
-            <Parallax className='recipe-category-content'>
+             <Parallax className='recipe-category-content'>
                 <div className='recipe-category-title'>
                     <h1>{category}</h1>
                 </div>
@@ -44,7 +44,7 @@ export function RecipeCategory({ item, category, recipes }) {
                             {recipeLinks.map((recipe) => (
                                 <li key={recipe.id}>
                                     <Link
-                                        className='modal-link'
+                                        className='recipe-list-link'
                                         to={`/recipes/${recipe.id}`} state={{ recipe: recipe }}
                                     >
                                         {recipe.title}
