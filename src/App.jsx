@@ -17,7 +17,7 @@ import { RecipePage } from './components/RecipePage';
 {/* 
 ReactGA.initialize([
     {
-        trackingId: 'G-PFSPZEC7DM'
+        trackingId: ''
     }
 ]);*/}
 
