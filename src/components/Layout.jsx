@@ -9,10 +9,6 @@ export function Layout() {
 
     const location = useLocation();
 
-
-
-
-
     const [isSolidBackground, setIsSolidBackground] = useState(false);
 
 

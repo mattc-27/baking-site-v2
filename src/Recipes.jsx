@@ -1,35 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { recipeCategories, recipeCollectionNew } from './data/recipes';
-import { RecipeCategory } from './components/RecipeCategory';
+import { recipeCollection } from './data/recipes';
 
 export default function Recipes() {
 
   const location = useLocation();
 
   const [recipes, setRecipes] = useState('');
-  const [recipesNew, setRecipesNew] = useState('');
-  const [categoryRecipes, setCategoryRecipes] = useState('');
 
 
   useEffect(() => {
-    setRecipesNew(recipeCollectionNew);
+    setRecipes(recipeCollection)
   }, [])
-
-  useEffect(() => {
-    setRecipes(recipeCategories)
-    setRecipesNew(recipeCollectionNew)
-    setCategoryRecipes()
-
-  }, [])
-
-  console.log(recipesNew)
-
-  useEffect(() => {
-    console.log(recipesNew)
-  }, [recipes, setRecipes])
-
-
 
   return (
     <div className='main-container'>
@@ -38,8 +20,8 @@ export default function Recipes() {
           <h1>Recipe Collection</h1>
         </div>
         <div className='recipe-category-cards' /*  className='recipe-category-section'*/ >
-          {recipesNew &&
-            recipesNew.map((item, index) => (
+          {recipes &&
+            recipes.map((item, index) => (
               < >
                 <RecipeCategory
                   item={item}
