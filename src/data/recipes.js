@@ -4,6 +4,9 @@ import pumpkin_pie from '../assets/pumpkin_pie.png';
 import cinnamon_rolls from '../assets/cinnamon_rolls.png';
 import blueberry_muffins from '../assets/blueberry_muffins.png';
 import cherry_bars from '../assets/cherry_bars.png';
+import chocolate_chip_cookies from '../assets/chocolate_chip_cookies.png';
+import brownies from '../assets/brownies.png';
+
 
 const recipeCollection = [
     {
@@ -441,6 +444,158 @@ const recipeCollection = [
                     'Continue baking at 350°F for 30-35 minutes.',
                     'Allow the bars to cool before cutting into squares.',
                     'Serve and enjoy!'
+                ]
+            },
+            {
+                id: 4,
+                title: 'Chocolate Chip Cookies',
+                image: chocolate_chip_cookies,
+                alt: 'Chocolate Chip Cookie',
+                attribution: '',
+                category: 'cookies_bars',
+                name: 'chocolate_chip_cookies',
+                ingredients: [
+                    {
+                        ing: 1,
+                        name: 'All purpose flour',
+                        quantity: 2,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 2,
+                        name: 'Salt',
+                        quantity: 0.25,
+                        unit: 'Teaspoon'
+                    },
+                    {
+                        ing: 3,
+                        name: 'Baking soda',
+                        quantity: 1,
+                        unit: 'Teaspoon'
+                    },
+                    {
+                        ing: 4,
+                        name: 'Dark brown sugar',
+                        quantity: 0.66,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 5,
+                        name: 'Cane sugar',
+                        quantity: 0.33,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 6,
+                        name: 'Plant-based butter',
+                        quantity: 1,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 7,
+                        name: 'Egg',
+                        quantity: 1,
+                        unit: '',
+                        notes: ''
+                    },
+                    {
+                        ing: 8,
+                        name: 'Vanilla extract',
+                        quantity: 1,
+                        unit: 'Teaspoon',
+                        notes: ''
+                    }, 
+                    {
+                        ing: 9,
+                        name: 'Semi-sweet chocolate chips',
+                        quantity: 1,
+                        unit: 'Cup',
+                        notes: ''
+                    }, 
+                ],
+                instructions: [
+                    'In a bowl, mix together flour, baking powder and salt.',
+                    'Beat together the butter and sugars.',
+                    'Beat in the egg and vanilla extract. Then beat in the dry mixture.',
+                    'Form dough into a disk and regrigerate for at least 4 hours.',
+                    'Preheat oven to 350°F.',
+                    'Roll dough into balls and place an inch apart on baking sheet.',
+                    'Bake for 12-15min or until at desired doneness.',
+                ]
+            },
+            {
+                id: 5,
+                title: 'Brownies',
+                image: brownies,
+                alt: 'Brownies',
+                attribution: '',
+                category: 'cookies_bars',
+                name: 'brownies',
+                ingredients: [
+                    {
+                        ing: 1,
+                        name: 'All purpose flour',
+                        quantity: 2,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 2,
+                        name: 'Salt',
+                        quantity: 0.25,
+                        unit: 'Teaspoon'
+                    },
+                    {
+                        ing: 3,
+                        name: 'Cane sugar',
+                        quantity: 1,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 4,
+                        name: 'Dark brown sugar',
+                        quantity: 0.25,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 5,
+                        name: 'Applesauce',
+                        quantity: 2,
+                        unit: 'Tablespoon'
+                    },
+                    {
+                        ing: 6,
+                        name: 'Plant-based butter',
+                        quantity: 8,
+                        unit: 'Tablespoon'
+                    },
+                    {
+                        ing: 7,
+                        name: 'Cocoa powder',
+                        quantity: 0.75,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 7,
+                        name: 'Semi-sweet chocolate chips',
+                        quantity: 0.25,
+                        unit: 'Cup'
+                    },
+                    {
+                        ing: 8,
+                        name: 'Egg',
+                        quantity: 2,
+                        unit: ''
+                    },
+                   
+                ],
+                instructions: [
+                    'Combine butter, cocoa powder, chocolate chips and applesauce in a bowl rested over simmering water',
+                    'Stir occasionally until everything is melted together. Add 1 teaspoon of vanilla extract.',
+                    'Remove bowl from saucepan and let cool for 5m inutes.',
+                    'Add 2 eggs, one at a time - mix well after each egg.',
+                    'When the batter is thick and blended together, mixx in 1/2 cup of flour.',
+                    'Add mix-ins (walnuts, etc).',
+                    'Bake in an 8x8 or 13x9 pan at 325 for 20-30 min or until a toothpick comes out of the brownies clean.'
                 ]
             },
         ]

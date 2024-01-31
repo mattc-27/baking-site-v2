@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Parallax } from "react-scroll-parallax";
 
-export function RecipeCategory({ item, category, recipes }) {
+export default function RecipeCategory({ item, category, recipes }) {
 
     const [recipeLinks, setRecipeLinks] = useState();
 

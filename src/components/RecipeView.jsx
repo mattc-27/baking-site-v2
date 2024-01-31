@@ -27,95 +27,97 @@ export function RecipeView(props) {
     };
 
     return (
-        <div className='recipe-view-container'>
-            <div className='recipe-content'>
-                <div className='recipe-content-top'>
-                    {recipe ?
-                        <>
-                            <div className='recipe-page-title'>
-                                <h1>{recipe.title}</h1>
-                            </div>
-                        </>
-                        : null
-                    }
-                </div>
-                {/* <div className='other-details'>
-                   Created          <p></p>
-                </div>*/}
-                <div className='recipe-main'>
-                    <div className='ingredients-section'>
-
-                        {/* 
-                        <div className='ingredients-section-title'>
-                            <h2>Ingredients</h2>
-                        </div>*/}
-
+        <>
+            <div className='recipe-view-container'>
+                <div className='recipe-content'>
+                    <div className='recipe-content-top'>
                         {recipe ?
                             <>
-                                <table className='recipe-table' >
-                                    <tbody className='recipe-table-body'>
-                                        <tr className='row-th' >
-                                            <th className='row-th-lg'> Ingredients</th>
-                                            <th className='row-th-lg'> Amount</th>
-                                            <th className='row-th-lg'> Unit</th>
-
-                                        </tr>
-                                        {recipe.ingredients.map((item) => (
-                                            <tr className='row-td' key={item.id} >
-                                                <td className='row-lg'>{item.name}</td>
-                                                <td className='row-sm'>
-                                                    {item.quantity}
-                                                </td>
-                                                <td className='row-td-md'>
-                                                    {`${formatQuantity(item.quantity, item.unit)}`}
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                <div className='recipe-page-title'>
+                                    <h1>{recipe.title}</h1>
+                                </div>
                             </>
                             : null
                         }
                     </div>
-                    <div className='instructions-section'>
-                        <div className='col'>
-                            <div className='instructions-section-title'>
-                                <h2>Instructions</h2>
-                            </div>
-                            {recipe.instructions ?
-                                <div className='recipe-instructions  '>
-                                    <ol>
-                                        {recipe.instructions.map((item) => (
-                                            <li>{item}</li>
-                                        ))}
-                                    </ol>
-                                    {/*  <p>{recipe.instructions}</p> */}
+                    {/* <div className='other-details'>
+                   Created          <p></p>
+                </div>*/}
+                    <div className='recipe-main'>
+                        <div className='ingredients-section'>
+
+                            {/* 
+                        <div className='ingredients-section-title'>
+                            <h2>Ingredients</h2>
+                        </div>*/}
+
+                            {recipe ?
+                                <>
+                                    <table className='recipe-table' >
+                                        <tbody className='recipe-table-body'>
+                                            <tr className='row-th' >
+                                                <th className='row-th-lg'> Ingredients</th>
+                                                <th className='row-th-lg'> Amount</th>
+                                                <th className='row-th-lg'> Unit</th>
+
+                                            </tr>
+                                            {recipe.ingredients.map((item) => (
+                                                <tr className='row-td' key={item.id} >
+                                                    <td className='row-lg'>{item.name}</td>
+                                                    <td className='row-sm'>
+                                                        {item.quantity}
+                                                    </td>
+                                                    <td className='row-td-md'>
+                                                        {`${formatQuantity(item.quantity, item.unit)}`}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </>
+                                : null
+                            }
+                        </div>
+                        <div className='instructions-section'>
+                            <div className='col'>
+                                <div className='instructions-section-title'>
+                                    <h2>Instructions</h2>
                                 </div>
-                                : null}
-                        </div>
-                    </div>
-                    <div className='recipe-notes-section'>
-                        <div className='notes'>
-                            <div className='recipe-notes-title'>
-                                <h2>Notes</h2>
-                            </div>
-                            <div style={{ height: '300px' }}>
-                                {recipe.attribution ?
-
-                                    <p><b>Adapted from:</b><a href={recipe.attribution}>{recipe.attribution}</a></p>
-
-                                    : null
-                                }
+                                {recipe.instructions ?
+                                    <div className='recipe-instructions  '>
+                                        <ol>
+                                            {recipe.instructions.map((item) => (
+                                                <li>{item}</li>
+                                            ))}
+                                        </ol>
+                                        {/*  <p>{recipe.instructions}</p> */}
+                                    </div>
+                                    : null}
                             </div>
                         </div>
-                        {/* Tags, categories *       <p></p> */}
-                        <div className='recipe-page-title-img' >
-                            <img src={recipe.image} />
-                        </div>
-                    </div>
+                        <div className='recipe-notes-section'>
+                            <div className='notes'>
+                                <div className='recipe-notes-title'>
+                                    <h2>Notes</h2>
+                                </div>
+                                <div style={{ height: '300px' }}>
+                                    {recipe.attribution ?
 
+                                        <p><b>Adapted from:</b><a href={recipe.attribution}>{recipe.attribution}</a></p>
+
+                                        : null
+                                    }
+                                </div>
+                            </div>
+                            {/* Tags, categories *       <p></p> */}
+                            <div className='recipe-page-title-img' >
+                                <img src={recipe.image} />
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }

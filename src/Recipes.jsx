@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { useLocation } from 'react-router-dom';
+
+//import { RecipeCategory } from './components/RecipeCategory';
 import { recipeCollection } from './data/recipes';
+
+const RecipeCategory = lazy(() => import('./components/RecipeCategory.jsx'));
 
 export default function Recipes() {
 
@@ -13,29 +17,39 @@ export default function Recipes() {
     setRecipes(recipeCollection)
   }, [])
 
+
+  function Loading() {
+    return (
+      <>
+        <p><i>Loading...</i></p>;
+      </>
+
+    )
+  }
+
   return (
-    <div className='main-container'>
-      <div className='scroll-y' >
+    <>
+      <div className='recipe-category-section' >
         <div className='recipe-category-page-title'>
           <h1>Recipe Collection</h1>
         </div>
         <div className='recipe-category-cards' /*  className='recipe-category-section'*/ >
           {recipes &&
             recipes.map((item, index) => (
-              < >
-                <RecipeCategory
-                  item={item}
-                  //scrollToNextRecipe={() => scrollToRecipe(`recipe-card-section-${index + 1}`)}
-                  recipes={item.recipes}
-                  category={item.category}
-                  key={item.id}
-                />
-              </>
+              <Suspense fallback={<Loading />}>
+                < >
+                  <RecipeCategory
+                    item={item}
+                    //scrollToNextRecipe={() => scrollToRecipe(`recipe-card-section-${index + 1}`)}
+                    recipes={item.recipes}
+                    category={item.category}
+                    key={item.id}
+                  />
+                </>
+              </Suspense>
             ))}
         </div>
       </div>
-    </div>
-
-
+    </>
   );
 }
