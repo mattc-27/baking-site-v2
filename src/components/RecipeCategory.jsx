@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
-import cinnRols from '../assets/cinnRols.jpg';
-import bbMuffin from '../assets/bbMuffin.jpg';
+import { Parallax } from "react-scroll-parallax";
 
-
-export function RecipeCategory({ item, category, recipes }) {
+export default function RecipeCategory({ item, category, recipes }) {
 
     const [recipeLinks, setRecipeLinks] = useState();
 
@@ -45,7 +42,7 @@ export function RecipeCategory({ item, category, recipes }) {
                                 <li key={recipe.id}>
                                     <Link
                                         className='recipe-list-link'
-                                        to={`/recipes/${recipe.id}`} state={{ recipe: recipe }}
+                                        to={`/recipes/view/${recipe.name}`} state={{ recipe: recipe }}
                                     >
                                         {recipe.title}
                                     </Link>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
-
 export function RecipeCard({item}) {
 
     return (
@@ -33,7 +32,7 @@ export function RecipeCard({item}) {
                     >
                         <h1>{item.title}</h1>
                         <Link className='recipe-card-link'
-                            to={`/recipes/${item.id}`} state={{ recipe: item }}
+                            to={`/recipes/view/${item.name}`} state={{ recipe: item }}
                         >View recipe
                         </Link>
                     </div>

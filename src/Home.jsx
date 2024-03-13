@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 import { WelcomeSection } from './components/WelcomeSection';
 import { RecipeCard } from './components/RecipeCard';
-//import { recipeCollection } from './data/recipes';
-import { recipeCollection, recipeCollectionNew } from './data/recipes';
+import { recipeCollection } from './data/recipes';
 
 
 export function Home() {
@@ -25,8 +22,8 @@ export function Home() {
   useEffect(() => {
     async function fetchActivePosts() {
       try {
-        setRecipes(recipeCollectionNew)
-        setDefaultPosts(recipeCollectionNew)
+        setRecipes(recipeCollection)
+        setDefaultPosts(recipeCollection)
       } catch (error) {
         console.error(error.message)
       }

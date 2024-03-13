@@ -12,16 +12,16 @@ import './style.css';
 
 import { Layout } from './components/Layout';
 import { Home } from './Home';
-import { RecipePage } from './components/RecipePage';
 import { RecipeView } from './components/RecipeView';
 import Recipes from './Recipes';
 
-
+/*
 ReactGA.initialize([
     {
         trackingId: ''
     }
 ]);
+*/
 
 const router = createBrowserRouter([
 
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
                 element: <Recipes />,
             },
             {
-                path: `/recipes/:id`,
+                path: `/recipes/view/:name`,
                 element: <RecipeView />,
             }
         ],
@@ -50,5 +50,5 @@ export default function App() {
             <RouterProvider router={router} />
         </ParallaxProvider>
     );
-    
+
 }
