@@ -15,12 +15,13 @@ import { Home } from './Home';
 import { RecipeView } from './components/RecipeView';
 import Recipes from './Recipes';
 
-
+/*
 ReactGA.initialize([
     {
         trackingId: ''
     }
 ]);
+*/
 
 const router = createBrowserRouter([
 
@@ -49,5 +50,5 @@ export default function App() {
             <RouterProvider router={router} />
         </ParallaxProvider>
     );
-    
+
 }
